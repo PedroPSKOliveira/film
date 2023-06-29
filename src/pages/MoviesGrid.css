@@ -1,0 +1,100 @@
+.container {
+    background-color: #0a0a0a;
+    border-radius: 20px;
+    overflow: hidden; /* hide scrollbar */
+    margin: 2rem 2rem 0;
+}
+
+.container .title {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2rem 0 1rem;
+}
+
+.title .queryText {
+    color: #f7d354;
+}
+
+.container .scrollButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    margin-bottom: 1rem;
+
+}
+
+.scrollButtons svg {
+    cursor: pointer;
+    color: #f7d354;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+}
+
+.scrollButtons svg:nth-child(1) {
+    left: 10px;
+}
+
+.scrollButtons svg:nth-child(2) {
+    right: 10px;
+}
+
+.moviesContainer {
+    display: flex;
+    overflow-x: scroll;
+    gap: 2rem;
+    padding: 2rem;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.moviesContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.moviesContainer div {
+    flex: 0 0 auto;
+    width: 15.3%;
+    color: #fff;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1b1b1b;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.moviesContainer div img {
+    max-width: 100%;
+}
+
+.moviesContainer div img,
+.moviesContainer div h2,
+.moviesContainer div p {
+    margin-bottom: 1rem;
+}
+
+.moviesContainer div svg {
+    color: #f7d354;
+}
+
+.moviesContainer div a {
+    background-color: #f7d354;
+    border: 2px solid #f7d354;
+    border-radius: 4px;
+    color: black;
+    padding: 1rem .5rem;
+    align-items: center;
+    transition: .3s;
+    text-align: center;
+    font-weight: bold;
+}
+
+.moviesContainer div a:hover {
+    background-color: transparent;
+    color: #f7d354;
+}
