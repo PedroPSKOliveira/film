@@ -58,9 +58,25 @@ const Home = () => {
     const scrollContainer3 = useRef(null);
     const scrollContainer4 = useRef(null);
 
-    const scroll = (scrollOffset, scrollContainer) => {
-        scrollContainer.current.scrollLeft += scrollOffset;
-    }
+    // Adicione um argumento 'direction' à função 'scroll'
+    const scroll = (direction, scrollContainer) => {
+        // Selecione o primeiro filme no container
+        const firstMovieCard = scrollContainer.current.firstChild;
+
+        // Calcule a largura total (offsetWidth inclui padding, content, e border)
+        const movieCardWidth = firstMovieCard.offsetWidth;
+
+        // Calcule as margens esquerda e direita
+        const style = window.getComputedStyle(firstMovieCard);
+        const marginLeft = parseInt(style.marginLeft);
+        const marginRight = parseInt(style.marginRight);
+
+        // Calcule a largura total de rolagem
+        const scrollAmount = movieCardWidth + marginLeft + marginRight;
+
+        // Se a direção for 'left', subtraia a quantidade de rolagem, senão adicione
+        scrollContainer.current.scrollLeft += direction === 'left' ? -scrollAmount : scrollAmount;
+    };
 
     return (
         <>
@@ -69,8 +85,8 @@ const Home = () => {
                     Melhores filmes
                 </h2>
                 <div className="scrollButtons">
-                    <AiOutlineArrowLeft onClick={() => scroll(-500, scrollContainer1)} />
-                    <AiOutlineArrowRight onClick={() => scroll(500, scrollContainer1)} />
+                    <AiOutlineArrowLeft onClick={() => scroll('left', scrollContainer1)} />
+                    <AiOutlineArrowRight onClick={() => scroll('right', scrollContainer1)} />
                 </div>
                 <div ref={scrollContainer1} className={"moviesContainer"}>
                     {topMovies.length === 0 && <p>Carregando...</p>}

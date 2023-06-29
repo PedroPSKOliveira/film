@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     gap: .5rem;
+    cursor: pointer;
 }
 
 #navbar form {
@@ -23,6 +24,7 @@
     border-radius: 4px;
     background-color: #3d3d3d;
     color: white;
+    cursor: pointer;
 }
 
 #navbar input:focus {
@@ -43,6 +45,15 @@
 }
 
 #navbar form button:hover {
-    background-color: transparent;
+    background-color: #121212;
     color: #f7d354;
+    cursor: pointer;
+}
+
+
+@media (max-width: 446px) {
+    #navbar input{
+        margin-left: auto;
+        width: 70%;
+    }
 }

@@ -33,7 +33,7 @@ const Movie = () => {
     return (
         <div className={"moviePage"}>
             {movie && (
-                <>
+                <div className={"infos"}>
                     <MovieCard movie={movie} showLink={false}/>
                     <p className={"tagline"}>
                         {movie.tagline}
@@ -62,7 +62,7 @@ const Movie = () => {
                         </h3>
                         <p>{movie.overview}</p>
                     </div>
-                </>
+                </div>
             )}
         </div>
     )

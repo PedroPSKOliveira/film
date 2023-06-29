@@ -28,7 +28,7 @@ const Navbar = () => {
             <form onSubmit={handleSubmit}>
                 <input
                     type={"text"}
-                    placeholder={"Busque um filme"}
+                    placeholder={"Pesquise"}
                     onChange={(e) => setSearch(e.target.value)}
                     value={search}
                 />

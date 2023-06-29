@@ -98,3 +98,48 @@
     background-color: transparent;
     color: #f7d354;
 }
+
+@media (max-width: 1160px) and (min-width: 1024px){
+    .moviesContainer div {
+        width: 18%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .moviesContainer div {
+        width: 20%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .moviesContainer div {
+        width: 23%;
+    }
+}
+
+@media (max-width: 768px) {
+    .moviesContainer div {
+        width: 25%;
+    }
+}
+
+@media (max-width: 600px) {
+    .moviesContainer div {
+        width: 50%;
+    }
+    .infos {
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 446px) {
+    .moviesContainer div {
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .moviesContainer div {
+        width: 100%;
+    }
+}
